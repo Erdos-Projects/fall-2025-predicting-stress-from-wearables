@@ -17,9 +17,9 @@ public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html
 3. High impact and relatable to general audience
 
 ## References:
-1. ML review: https://arxiv.org/pdf/2209.15137
-2. Review of biomarkers related to stress. https://onlinelibrary.wiley.com/doi/10.1002/dev.22490
-3. https://pmc.ncbi.nlm.nih.gov/articles/PMC11230864/
+1. Review: https://pmc.ncbi.nlm.nih.gov/articles/PMC11230864/
+2. Another review: https://arxiv.org/pdf/2209.15137
+3. Review of biomarkers related to stress. https://onlinelibrary.wiley.com/doi/10.1002/dev.22490
 4. ML study that predicts stress up to 1 min ahead: https://arxiv.org/abs/2106.07542
 5. Relevant. See their Table 4 for a benchmark of WESAD data using different models. https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control
 6. ML time series for stress duration prediction (predicts the duration of the next stress episode from a prior stress episode). Not directly related, but their method may be useful for us. https://dl.acm.org/doi/10.1145/2858036.2858218
