@@ -2,7 +2,7 @@
 
 Shijun Sun, Raagini Patki, Christiana Mavroyiakoumou, Alessandro Podo
 
-The goal is to combine signals such as heart rate, electrodermal activity, skin temperature, and motion to forecast whether someone is likely to experience a stress episode in the next 5–30 minutes.
+The goal is to combine signals such as heart rate, heart rate variability, skin temperature, skin conductance, and motion to forecast whether someone is likely to experience a stress episode in the next 5–30 minutes.
 
 ## Dataset: 
 public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html
