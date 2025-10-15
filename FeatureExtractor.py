@@ -4,9 +4,7 @@ import pandas as pd
 import pickle
 from sklearn.linear_model import LinearRegression
 
-'''
-Need to create a function that takes signal and outputs the required characteristics
-'''
+
 
 class FeatureExtractor():
 
