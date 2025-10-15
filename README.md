@@ -23,7 +23,12 @@ public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html
 4. ML study that predicts stress up to 1 min ahead: https://arxiv.org/abs/2106.07542
 5. Relevant. See their Table 4 for a benchmark of WESAD data using different models. https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control
 6. ML time series for stress duration prediction (predicts the duration of the next stress episode from a prior stress episode). Not directly related, but their method may be useful for us. https://dl.acm.org/doi/10.1145/2858036.2858218
-  
+
+### For stress vs exercise:
+https://www.nature.com/articles/s41597-025-04845-9 and Dataset: https://physionet.org/content/wearable-device-dataset/1.0.0/
+
+### For Personalization
+https://arxiv.org/pdf/2107.05666 (Used WESAD)
 
 ------------------------------------------------
 
