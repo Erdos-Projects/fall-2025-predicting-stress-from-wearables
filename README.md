@@ -1,15 +1,17 @@
-# Predicting Stress Episodes from Wearables
+# Early Detection of Stress Episodes from Wearables
 
 Shijun Sun, Raagini Patki, Christiana Mavroyiakoumou, Alessandro Podo
 
-The goal is to combine signals such as heart rate, heart rate variability, skin temperature, skin conductance, and motion to forecast whether someone is likely to experience a stress episode in the next 5–30 minutes.
+We combine multimodal physiological signals such as ECG, skin temperature, skin conductance, and respiration with the objective of detecting (acute) stress episodes as early as possible after they are triggered.
+
+<!-- to forecast whether someone is likely to experience a stress episode in the next 5–30 minutes. -->
 
 ## Dataset: 
-public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html
+public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html and accompanying paper https://ubi29.informatik.uni-siegen.de/usi/pdf/ubi_icmi2018.pdf.
 
 ## Method:
 1. Build baseline models using classical ML methods (e.g., logistic regression, random forests)
-2. Explore deep time series approaches such as 1D CNNs
+<!-- 2. Explore deep time series approaches such as 1D CNNs -->
 
 ## Why is this research-worthy:
 1. Predicting stress is possible: stress responses involve gradual changes in HRV, EDA, temperature, and respiration before conscious awareness, making short-term forecasting possible.
@@ -45,4 +47,21 @@ data contains electrodermal activity, heart rate, blood volume pulse, skin surfa
 
 **BIOSTRESS**
 https://www.kaggle.com/datasets/orvile/biostress-dataset
+
+
+
+--------------------------------------------
+
+## Navigating the Repository
+
+The repo has three main folders, codes, datasets and results.  
+
+**Datasets**
+This has all the datasets that we have extracted from the raw signals. Each file is named of the form a_b_c_d.csv. Here 'a' denotes whether it is training or test and 'b' denotes if the data corresponds to chest or wrist. The numbers c and d denote window size (in seconds) and the shift between windows (in seconds) while extracting the features from raw signal using rolling window. Some datasets all have 'all' at the end, which denotes the datasets with all possible features. The rest of them have a subset of the features.
+
+**Codes**
+This folder contains all the codes. If you want to obtain the results in the as shown in the results folder, run save_results.py. It will default save the results corresponding to 'chest' datasets. For 'wrist' results, just uncomment line 5 (and comment line 4) and rerun the code. The other codes are well-commented and should be easy to follow. The codes require the folder WESAD to run which contains the raw signals. This is not available in the repository but can be downloaded via the link mentioned in earlier in the file. 
+
+**Results**
+This folder contains the results of all our tests on the datasets will different window sizes, shifts, models, modalities, thresholds, and feature combinations. Each file contains the performance on a given dataset and reports the number of false alarms, misdetections, detection delays on all test subjects with different thresholds as part of early detection. For the classification task, precision, recall, f1 score and accuracy are reported at different times after the stress was induced. All these results are evaluated for all the four models in each file.
 
