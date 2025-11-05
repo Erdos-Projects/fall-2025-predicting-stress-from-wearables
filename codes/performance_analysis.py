@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 from metrics import *
 
 # =============================================================================
@@ -32,11 +33,11 @@ def load_train_test_data(modality, window_in_sec, shift_in_sec, all_features=Fal
     """
 
 	if all_features:
-		train_df = pd.read_csv(f'train_{modality}_{window_in_sec}_{shift_in_sec}_all.csv')
-		test_df = pd.read_csv(f'test_{modality}_{window_in_sec}_{shift_in_sec}_all.csv')
+		train_df = pd.read_csv(f'../datasets/train_{modality}_{window_in_sec}_{shift_in_sec}_all.csv')
+		test_df = pd.read_csv(f'../datasets/test_{modality}_{window_in_sec}_{shift_in_sec}_all.csv')
 	else:
-		train_df = pd.read_csv(f'train_{modality}_{window_in_sec}_{shift_in_sec}.csv')
-		test_df = pd.read_csv(f'test_{modality}_{window_in_sec}_{shift_in_sec}.csv')
+		train_df = pd.read_csv(f'../datasets/train_{modality}_{window_in_sec}_{shift_in_sec}.csv')
+		test_df = pd.read_csv(f'../datasets/test_{modality}_{window_in_sec}_{shift_in_sec}.csv')
 
 	if 'subject_idx' not in train_df.columns:
 		test_df.rename(columns={'subject':'subject_idx'}, inplace=True)

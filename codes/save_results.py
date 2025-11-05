@@ -1,10 +1,10 @@
 from performance_analysis import *
 
 window_shift_pairs = [(10,5), (10,10), (20,5), (20,10), (20, 20), (30, 5), (30, 10), (30, 15), (30,30), (60, 5), (60, 15), (60, 30), (60, 60)]
-# modality = 'chest'
-modality = 'wrist'
-methods = ['LR', 'RF', 'LDA'] #, 'XG']
-method_names = ['Logistic Regression', 'Random Forest', 'Linear Discriminant Analysis'] #, 'XGBoost']
+modality = 'chest'
+# modality = 'wrist'
+methods = ['LR', 'RF', 'LDA', 'XG']
+method_names = ['Logistic Regression', 'Random Forest', 'Linear Discriminant Analysis', 'XGBoost']
 times = [30, 35, 40, 45, 60, 75, 90, 105, 120, 150, 180, 300, 600]
 
 print('\n Starting with small features...... \n')
@@ -16,7 +16,7 @@ for w,s in window_shift_pairs:
 	except FileNotFoundError:
 		continue
 
-	filename = f'{modality}_{w}_{s}.txt'
+	filename = f'../results/{modality}_{w}_{s}.txt'
 
 	with open(filename, 'w') as f:
 
@@ -57,7 +57,7 @@ for w,s in window_shift_pairs:
 	except FileNotFoundError:
 		continue
 
-	filename = f'{modality}_{w}_{s}_all.txt'
+	filename = f'../results/{modality}_{w}_{s}_all.txt'
 
 	with open(filename, 'w') as f:
 

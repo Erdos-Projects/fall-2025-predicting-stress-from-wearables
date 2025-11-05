@@ -88,3 +88,33 @@ Recall scores:1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.9882005899705014
 F1 scores:0.00816326530612245 0.023715415019762844 0.10830324909747292 0.2108626198083067 0.2922636103151863 0.35844155844155845 0.41330166270783847 0.5628318584070796 0.7274701411509229
 ------------------------------------------- 
 
+Method: XGBoost
+
+For threshold = 1:
+False Alarms:0 15 3 0 1 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):30 30 30 30 30 30
+For threshold = 2:
+False Alarms:0 14 3 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):40 40 40 40 40 40
+For threshold = 3:
+False Alarms:0 12 3 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):50 50 50 50 50 50
+For threshold = 4:
+False Alarms:0 12 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):60 60 60 60 60 60
+For threshold = 5:
+False Alarms:0 8 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):70 70 70 70 70 70
+
+Classification performance: 
+Time stamps:30 40 60 90 120 150 180 300 600
+Precision scores:0.05 0.13636363636363635 0.4411764705882353 0.6346153846153846 0.7285714285714285 0.7840909090909091 0.8207547169811321 0.8932584269662921 0.946927374301676
+Recall scores:1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+F1 scores:0.09523809523809523 0.24 0.6122448979591837 0.7764705882352941 0.8429752066115702 0.8789808917197452 0.9015544041450777 0.9436201780415431 0.9727403156384505
+------------------------------------------- 
+
