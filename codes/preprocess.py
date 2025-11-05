@@ -70,6 +70,11 @@ def get_subject_features(subject_idx, modality, window_in_sec, shift_in_sec, fea
 	baseline_normalized_df['label'] = 0
 	stress_normalized_df['label'] = 1
 
+	# Add subject index
+	baseline_normalized_df['subject_idx'] = subject_idx
+	stress_normalized_df['subject_idx'] = subject_idx
+
+
 	return pd.concat([baseline_normalized_df, stress_normalized_df], ignore_index=True)
 
 
@@ -198,8 +203,7 @@ def get_train_test_data(test_subjects, modality, window_in_sec, shift_in_sec, fe
 
 	Returns:
 	train_df (pd.DataFrame): A dataframe containing the training dataset
-	test_data_list (list): A list of pd.DataFrames each of which correspond to the test data of a given subject
-
+	test_df (pd.DataFrame): A dataframe containing the test dataset
 
 	'''
 
@@ -211,6 +215,7 @@ def get_train_test_data(test_subjects, modality, window_in_sec, shift_in_sec, fe
 
 		# Skip 12 since that is not in the dataset
 		if train_subjects[i] == 12:
+			print(train_subjects[i])
 			continue
 
 		# Obtain the feature matrix for the given subject
@@ -221,20 +226,28 @@ def get_train_test_data(test_subjects, modality, window_in_sec, shift_in_sec, fe
 			subject_df = get_subject_features(subject_idx=train_subjects[i], modality=modality, window_in_sec=window_in_sec, shift_in_sec=shift_in_sec, feature_extractor=feature_extractor, sampling_freq_dict=sampling_freq_dict)
 			train_df = pd.concat([train_df, subject_df], ignore_index=True)
 
-	test_data_list = []
+		print(train_subjects[i])
 
-	for i in test_subjects:
+
+	for i, test_idx in enumerate(test_subjects):
 
 		# Skip 12 since that is not in the dataset
-		if i == 12:
+		if test_idx == 12:
 			continue
 
 		# Obtain the feature matrix for the given subject
-		test_df = get_subject_features(subject_idx=i, modality=modality, window_in_sec=window_in_sec, shift_in_sec=shift_in_sec, feature_extractor=feature_extractor, sampling_freq_dict=sampling_freq_dict, calibration_frac=calibration_frac, include_calibration=False)
-		test_data_list.append(test_df)
+		if i == 0:
+			test_df = get_subject_features(subject_idx=test_idx, modality=modality, window_in_sec=window_in_sec, shift_in_sec=shift_in_sec, feature_extractor=feature_extractor, sampling_freq_dict=sampling_freq_dict, calibration_frac=calibration_frac, include_calibration=False)
+
+		else:
+			subject_df = get_subject_features(subject_idx=test_idx, modality=modality, window_in_sec=window_in_sec, shift_in_sec=shift_in_sec, feature_extractor=feature_extractor, sampling_freq_dict=sampling_freq_dict, calibration_frac=calibration_frac, include_calibration=False)
+			test_df = pd.concat([test_df, subject_df], ignore_index=True)
+
+		print(test_idx)
 
 
-	return train_df, test_data_list
+
+	return train_df, test_df 
 
 
 
