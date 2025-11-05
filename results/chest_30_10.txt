@@ -1,0 +1,90 @@
+Method: Logistic Regression
+
+For threshold = 1:
+False Alarms:60 60 66 76 82 57
+Miss Detections:0 0 0 1 0 0
+Detection Delays (in sec):30 30 30 30 30 30
+For threshold = 2:
+False Alarms:61 60 66 74 82 59
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):40 40 40 40 40 40
+For threshold = 3:
+False Alarms:56 58 69 76 82 55
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):50 50 50 50 50 50
+For threshold = 4:
+False Alarms:59 61 72 82 85 53
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):60 60 60 60 60 60
+For threshold = 5:
+False Alarms:59 61 72 86 85 65
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):70 70 70 70 70 70
+
+Classification performance: 
+Time stamps:30 40 60 90 120 150 180 300 600
+Precision scores:0.002512562814070352 0.007425742574257425 0.036057692307692304 0.07603686635944701 0.11283185840707964 0.14680851063829786 0.17827868852459017 0.2839285714285714 0.4581081081081081
+Recall scores:1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+F1 scores:0.005012531328320802 0.014742014742014743 0.06960556844547564 0.14132762312633834 0.20278330019880716 0.2560296846011132 0.3026086956521739 0.4422809457579972 0.6283595922150139
+------------------------------------------- 
+
+Method: Random Forest
+
+For threshold = 1:
+False Alarms:0 2 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):30 30 30 30 30 30
+For threshold = 2:
+False Alarms:0 0 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):40 40 40 40 40 40
+For threshold = 3:
+False Alarms:0 0 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):50 50 50 50 50 50
+For threshold = 4:
+False Alarms:0 0 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):60 60 60 60 60 60
+For threshold = 5:
+False Alarms:0 0 0 0 0 0
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):70 70 70 70 70 70
+
+Classification performance: 
+Time stamps:30 40 60 90 120 150 180 300 600
+Precision scores:0.3333333333333333 0.6 0.8823529411764706 0.9428571428571428 0.9622641509433962 0.971830985915493 0.9775280898876404 0.9875776397515528 0.9941348973607038
+Recall scores:1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+F1 scores:0.5 0.75 0.9375 0.9705882352941176 0.9807692307692307 0.9857142857142858 0.9886363636363636 0.99375 0.9970588235294118
+------------------------------------------- 
+
+Method: Linear Discriminant Analysis
+
+For threshold = 1:
+False Alarms:54 37 49 60 44 3
+Miss Detections:0 2 2 8 0 0
+Detection Delays (in sec):30 30 30 30 30 30
+For threshold = 2:
+False Alarms:54 37 50 59 44 2
+Miss Detections:0 2 2 7 0 0
+Detection Delays (in sec):40 40 40 40 40 40
+For threshold = 3:
+False Alarms:54 39 50 53 39 2
+Miss Detections:0 0 0 6 0 0
+Detection Delays (in sec):50 50 50 50 50 50
+For threshold = 4:
+False Alarms:54 39 53 53 39 2
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):60 60 60 60 60 60
+For threshold = 5:
+False Alarms:54 43 53 49 30 2
+Miss Detections:0 0 0 0 0 0
+Detection Delays (in sec):70 70 70 70 70 70
+
+Classification performance: 
+Time stamps:30 40 60 90 120 150 180 300 600
+Precision scores:0.004098360655737705 0.012 0.05725190839694656 0.11785714285714285 0.17114093959731544 0.21835443037974683 0.26047904191616766 0.3916256157635468 0.5756013745704467
+Recall scores:1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.9882005899705014
+F1 scores:0.00816326530612245 0.023715415019762844 0.10830324909747292 0.2108626198083067 0.2922636103151863 0.35844155844155845 0.41330166270783847 0.5628318584070796 0.7274701411509229
+------------------------------------------- 
+
