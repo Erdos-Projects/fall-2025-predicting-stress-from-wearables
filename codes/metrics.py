@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 
 # =============================================================================
 # Early Detection Metrics
@@ -139,6 +139,7 @@ def get_classification_metrics(y_true_list, y_pred_list, window_in_sec, shift_in
 	recall_arr = []
 	f1_score_arr = []
 	time_arr = []
+	acc_arr = []
 
 	for t in times:
 		# Check that the time aligns with a valid window position
@@ -154,8 +155,9 @@ def get_classification_metrics(y_true_list, y_pred_list, window_in_sec, shift_in
 			precision_arr.append(precision_score(output_true, output_pred))
 			recall_arr.append(recall_score(output_true, output_pred))
 			f1_score_arr.append(f1_score(output_true, output_pred))
+			acc_arr.append(accuracy_score(output_true, output_pred))
 
-	return time_arr, precision_arr, recall_arr, f1_score_arr
+	return time_arr, precision_arr, recall_arr, f1_score_arr, acc_arr
 
 
 	

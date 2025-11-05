@@ -96,7 +96,7 @@ def get_separated_signals(subject_idx, modality, sampling_freq_dict, label_samp_
 	'''
 
 	# Read the data
-	with open(f'./WESAD/S{subject_idx}/S{subject_idx}.pkl', 'rb') as f:
+	with open(f'../WESAD/S{subject_idx}/S{subject_idx}.pkl', 'rb') as f:
 		data = pickle.load(f, encoding="latin1")
 	
 	# Obtain the signal of the relevant modality

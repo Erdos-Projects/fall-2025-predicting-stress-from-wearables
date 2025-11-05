@@ -37,12 +37,13 @@ for w,s in window_shift_pairs:
 			f.write('\n')
 			f.write('Classification performance: \n')
 
-			time_arr, precision_arr, recall_arr, f1_score_arr = get_classification_metrics(y_true_list=y_true_list, y_pred_list=y_pred_list, window_in_sec=w, shift_in_sec=s, times=times)
+			time_arr, precision_arr, recall_arr, f1_score_arr, acc_arr = get_classification_metrics(y_true_list=y_true_list, y_pred_list=y_pred_list, window_in_sec=w, shift_in_sec=s, times=times)
 
 			f.write('Time stamps:' + ' '.join([str(t) for t in time_arr]) + '\n')
 			f.write('Precision scores:' + ' '.join([str(ps) for ps in precision_arr]) + '\n')
 			f.write('Recall scores:' + ' '.join([str(rs) for rs in recall_arr]) + '\n')
 			f.write('F1 scores:' + ' '.join([str(f1s) for f1s in f1_score_arr]) + '\n')
+			f.write('Accuracy scores:' + ' '.join([str(acc) for acc in acc_arr]) + '\n')
 
 			f.write('------------------------------------------- \n\n')
 
@@ -78,12 +79,13 @@ for w,s in window_shift_pairs:
 			f.write('\n')
 			f.write('Classification performance: \n')
 
-			time_arr, precision_arr, recall_arr, f1_score_arr = get_classification_metrics(y_true_list=y_true_list, y_pred_list=y_pred_list, window_in_sec=w, shift_in_sec=s, times=times)
+			time_arr, precision_arr, recall_arr, f1_score_arr, acc_arr = get_classification_metrics(y_true_list=y_true_list, y_pred_list=y_pred_list, window_in_sec=w, shift_in_sec=s, times=times)
 
 			f.write('Time stamps:' + ' '.join([str(t) for t in time_arr]) + '\n')
 			f.write('Precision scores:' + ' '.join([str(ps) for ps in precision_arr]) + '\n')
 			f.write('Recall scores:' + ' '.join([str(rs) for rs in recall_arr]) + '\n')
 			f.write('F1 scores:' + ' '.join([str(f1s) for f1s in f1_score_arr]) + '\n')
+			f.write('Accuracy scores:' + ' '.join([str(acc) for acc in acc_arr]) + '\n')
 
 			f.write('------------------------------------------- \n\n')
 
