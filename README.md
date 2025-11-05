@@ -56,12 +56,15 @@ https://www.kaggle.com/datasets/orvile/biostress-dataset
 
 The repo has three main folders, codes, datasets and results.  
 
-**Datasets**
+**Datasets**  
+
 This has all the datasets that we have extracted from the raw signals. Each file is named of the form a_b_c_d.csv. Here 'a' denotes whether it is training or test and 'b' denotes if the data corresponds to chest or wrist. The numbers c and d denote window size (in seconds) and the shift between windows (in seconds) while extracting the features from raw signal using rolling window. Some datasets all have 'all' at the end, which denotes the datasets with all possible features. The rest of them have a subset of the features.
 
-**Codes**
+**Codes**  
+
 This folder contains all the codes. If you want to obtain the results in the as shown in the results folder, run save_results.py. It will default save the results corresponding to 'chest' datasets. For 'wrist' results, just uncomment line 5 (and comment line 4) and rerun the code. The other codes are well-commented and should be easy to follow. The codes require the folder WESAD to run which contains the raw signals. This is not available in the repository but can be downloaded via the link mentioned in earlier in the file. 
 
-**Results**
+**Results**  
+
 This folder contains the results of all our tests on the datasets will different window sizes, shifts, models, modalities, thresholds, and feature combinations. Each file contains the performance on a given dataset and reports the number of false alarms, misdetections, detection delays on all test subjects with different thresholds as part of early detection. For the classification task, precision, recall, f1 score and accuracy are reported at different times after the stress was induced. All these results are evaluated for all the four models in each file.
 
