@@ -9,14 +9,16 @@ We combine multimodal physiological signals such as ECG, skin temperature, skin 
 ## Dataset: 
 public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html and accompanying paper https://ubi29.informatik.uni-siegen.de/usi/pdf/ubi_icmi2018.pdf.
 
-## Method:
-1. Build baseline models using classical ML methods (e.g., logistic regression, random forests)
+## Method & key results:
+1. Extract features from raw multimodal signals in the WESAD dataset using a sliding window approach. Calibrate features for each subject and do a test-train split.  
+2. Train models with extracted features, exploring classical ML methods: Logistic Regression, Random Forests, Linear Discriminant Analysis (LDA), XGBoost.
+3. Use our best-performing trained models (i.e. using Random Forests and LDA) to perform robust early detection of stress within 40 sec (90 sec) after stress is triggered, using chest (wrist) data from wearables. 
 <!-- 2. Explore deep time series approaches such as 1D CNNs -->
 
 ## Why is this research-worthy:
-1. Predicting stress is possible: stress responses involve gradual changes in HRV, EDA, temperature, and respiration before conscious awareness, making short-term forecasting possible.
-2. Existing research shows strong real-time detection of stress and ~1-minute lead-time prediction in controlled scenarios, but there is little work rigorously quantifying 5–30 minute early warnings, and robustness to missing/noisy sensors. This project targets this research gap.
-3. High impact and relatable to general audience
+1. Existing research has largely focused on classifying b/w stressed and relaxed states of subjects using physiological signals from wearables. Here, we train models to accurately and robustly detect stress within 40 sec of its onset. Our project targets this research gap.
+2. In real-life scenarios, early detection of stress allows for early interventions, which can guide appropriate actions to prevent prolonged/escalated stress responses. This can help support increased well-being and productivity among the wearable devices' users. 
+3. High impact and relatable to a general audience.
 
 ## References:
 1. Review: https://pmc.ncbi.nlm.nih.gov/articles/PMC11230864/
@@ -25,30 +27,7 @@ public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html 
 4. ML study that predicts stress up to 1 min ahead: https://arxiv.org/abs/2106.07542
 5. Relevant. See their Table 4 for a benchmark of WESAD data using different models. https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control
 6. ML time series for stress duration prediction (predicts the duration of the next stress episode from a prior stress episode). Not directly related, but their method may be useful for us. https://dl.acm.org/doi/10.1145/2858036.2858218
-
-### For stress vs exercise:
-https://www.nature.com/articles/s41597-025-04845-9 and Dataset: https://physionet.org/content/wearable-device-dataset/1.0.0/
-
-### For Personalization
-https://arxiv.org/pdf/2107.05666 (Used WESAD)
-
-------------------------------------------------
-
-## Additional Datasets (explore after training the model):
-
-**SWELL:** 
-
-25 people performed typical knowledge work. A varied set of data was recorded: computer logging, facial expression from camera recordings, body postures from a Kinect 3D sensor and heart rate (variability) and skin conductance from body sensors. Dataset not only contains raw data, but also preprocessed data and extracted features. The participants' stress was assessed with validated questionnaires
-https://cs.ru.nl/~skoldijk/SWELL-KW/Dataset.html 
-
-**Exam Stress:**
-
-data contains electrodermal activity, heart rate, blood volume pulse, skin surface temperature, inter beat interval and accelerometer data recorded during three exam sessions https://physionet.org/content/wearable-exam-stress/1.0.0/
-
-**BIOSTRESS**
-https://www.kaggle.com/datasets/orvile/biostress-dataset
-
-
+7. For Personalization - https://arxiv.org/pdf/2107.05666 (Used WESAD)
 
 --------------------------------------------
 
@@ -67,4 +46,26 @@ This folder contains all the codes. If you want to obtain the results in the as 
 **Results**  
 
 This folder contains the results of all our tests on the datasets will different window sizes, shifts, models, modalities, thresholds, and feature combinations. Each file contains the performance on a given dataset and reports the number of false alarms, misdetections, detection delays on all test subjects with different thresholds as part of early detection. For the classification task, precision, recall, f1 score and accuracy are reported at different times after the stress was induced. All these results are evaluated for all the four models in each file.
+
+
+------------------------------------------------
+
+## Additional Datasets for Future Directions (explore after initial analysis):
+
+**SWELL:** 
+
+25 people performed typical knowledge work. A varied set of data was recorded: computer logging, facial expression from camera recordings, body postures from a Kinect 3D sensor and heart rate (variability) and skin conductance from body sensors. Dataset not only contains raw data, but also preprocessed data and extracted features. The participants' stress was assessed with validated questionnaires
+https://cs.ru.nl/~skoldijk/SWELL-KW/Dataset.html 
+
+**Exam Stress:**
+
+data contains electrodermal activity, heart rate, blood volume pulse, skin surface temperature, inter beat interval and accelerometer data recorded during three exam sessions https://physionet.org/content/wearable-exam-stress/1.0.0/
+
+**BIOSTRESS**
+https://www.kaggle.com/datasets/orvile/biostress-dataset
+
+### For stress vs exercise:
+https://www.nature.com/articles/s41597-025-04845-9 and Dataset: https://physionet.org/content/wearable-device-dataset/1.0.0/
+
+
 
