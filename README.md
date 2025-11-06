@@ -18,7 +18,6 @@ public dataset WESAD https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html 
 ## Why is this research-worthy:
 1. Existing research has largely focused on classifying b/w stressed and relaxed states of subjects using physiological signals from wearables. Here, we train models to accurately and robustly detect stress within 40 sec of its onset. Our project targets this research gap.
 2. In real-life scenarios, early detection of stress allows for early interventions, which can guide appropriate actions to prevent prolonged/escalated stress responses. This can help support increased well-being and productivity among the wearable devices' users. 
-3. High impact and relatable to a general audience.
 
 ## References:
 1. Review: https://pmc.ncbi.nlm.nih.gov/articles/PMC11230864/
